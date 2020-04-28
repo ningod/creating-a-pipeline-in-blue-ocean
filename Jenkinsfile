@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:6-alpine'
-      args '-expose 3000 -e PIPELINE_NETWORK --network $PIPELINE_NETWORK -e VIRTUALHOST creating-a-pipeline-in-blue-ocean.$PIPELINE_NETWORK '
+      args '--expose 3000 -e PIPELINE_NETWORK --network $PIPELINE_NETWORK -e VIRTUALHOST creating-a-pipeline-in-blue-ocean.$PIPELINE_NETWORK '
     }
 
   }
