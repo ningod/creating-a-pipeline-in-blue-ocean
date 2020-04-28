@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'node:6-alpine'
-      args '--expose 3000'
+      args '--rm --expose 3000 -e PIPELINE_NETWORK --network $PIPELINE_NETWORK -e VIRTUALHOST creating-a-pipeline-in-blue-ocean.$PIPELINE_NETWORK '
     }
 
   }
@@ -29,8 +29,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    VIRTUAL_HOST = 'creating-a-pipeline-in-blue-ocean.pipeline.ninepla.net'
   }
 }
